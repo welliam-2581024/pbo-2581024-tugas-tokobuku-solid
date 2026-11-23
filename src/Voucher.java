@@ -10,8 +10,11 @@ public class Voucher implements MetodeBayar {
         return "Voucher " + Buku.formatRupiah(nilai);
     }
 
+    // Versi salah (melanggar kontrak, dipakai untuk langkah 5):
+    // return totalBelanja - nilai;
+    // Baris keluaran keranjang kedua: Voucher Rp100.000    : Rp-36.000
     @Override
     public int totalBayar(int totalBelanja) {
-        return totalBelanja - nilai;
+        return Math.max(0, totalBelanja - nilai);
     }
 }
