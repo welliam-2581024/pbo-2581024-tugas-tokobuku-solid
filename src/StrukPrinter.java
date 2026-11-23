@@ -13,6 +13,14 @@ public class StrukPrinter {
         System.out.println("Total belanja : " + Buku.formatRupiah(keranjang.hitungTotal()));
     }
 
+    public void cetakPembayaran(int totalBelanja, MetodeBayar[] pilihan) {
+        cetakJudul('-', "PEMBAYARAN");
+        for (MetodeBayar m : pilihan) {
+            System.out.printf("%-20s : %s%n", m.nama(),
+                Buku.formatRupiah(m.totalBayar(totalBelanja)));
+        }
+    }
+
     private void cetakJudul(char garis, String judul) {
         int sisa = LEBAR - judul.length() - 2;
         int kiri = sisa / 2;
