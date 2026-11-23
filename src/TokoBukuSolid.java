@@ -15,7 +15,8 @@ public class TokoBukuSolid {
         kedua.tambah(digital);
 
         StrukPrinter printer = new StrukPrinter();
-        MetodeBayar[] pilihan = { new Tunai(), new Transfer(), new EWallet() };
+        //MetodeBayar[] pilihan = { new Tunai(), new Transfer(), new EWallet() };
+        MetodeBayar[] pilihan = { new Tunai(), new Transfer(), new EWallet(), new Voucher(100000) };
 
         printer.cetakKeranjang("KERANJANG PERTAMA", pertama);
         printer.cetakPembayaran(pertama.hitungTotal(), pilihan);
